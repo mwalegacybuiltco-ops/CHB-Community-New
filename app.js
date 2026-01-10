@@ -136,19 +136,24 @@ function getCommentField(obj, key){
 function driveToDirect(raw){
   if(!raw) return "";
 
-  // Google Forms sometimes adds extra text or formatting
-  const text = String(raw);
+  const text = String(raw).trim();
 
-  // Extract Google Drive file ID
-  const idMatch =
+  // Grab file id from either:
+  // - https://drive.google.com/open?id=FILEID
+  // - https://drive.google.com/file/d/FILEID/view
+  const m =
     text.match(/\/file\/d\/([^/]+)/) ||
     text.match(/[?&]id=([a-zA-Z0-9_-]+)/);
 
-  if(!idMatch) return "";
+  if(!m) return "";
 
-  const fileId = idMatch[1];
-  return `https://drive.google.com/uc?export=view&id=${fileId}`;
+  const fileId = m[1];
+
+  // THUMBNAIL endpoint renders cleanly in <img> tags
+  // sz = size hint (bigger = sharper)
+  return `https://drive.google.com/thumbnail?id=${fileId}&sz=w1200`;
 }
+
 
 
 function copyText(text){
