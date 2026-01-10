@@ -3,16 +3,16 @@
 
 window.CHB_COMMUNITY = {
   // REQUIRED: Posts CSV feed (Google Sheet -> File -> Share -> Publish to web -> CSV)
-  FEED_CSV_URL: "PASTE_POSTS_CSV_PUB_LINK_HERE",
+  FEED_CSV_URL: "https://docs.google.com/spreadsheets/d/e/2PACX-1vSYGu4rcdcKRjLsx0jNAcQuPswjveFrnDJ5hbh7I-o84DJvA1XyR9z2H2ma4t5o2BNaOVINGuIcYcTM/pub?output=csv",
 
   // OPTIONAL: Comments CSV feed (separate Google Sheet for comment form responses)
-  COMMENTS_CSV_URL: "PASTE_COMMENTS_CSV_PUB_LINK_HERE",
+  COMMENTS_CSV_URL: "https://docs.google.com/spreadsheets/d/e/2PACX-1vTj-xUDGMddo_Zapki7VPxab5lEyDcT4M1fBUpV0_VhXEP7ns4QbXjqt5tomnqFCnh5PaYggDZuilaR/pub?output=csv",
 
   // REQUIRED: Google Form link for creating a post (the post form)
-  POST_FORM_URL: "PASTE_POST_FORM_URL_HERE",
+  POST_FORM_URL: "https://docs.google.com/forms/d/e/1FAIpQLScGhWFqYLmFh06snGMdVGbftUCLfZPANt-RbI6phUbHMmEAdw/viewform?usp=header",
 
   // OPTIONAL: Google Form base link for commenting (do NOT use /prefill)
-  COMMENT_FORM_URL: "PASTE_COMMENT_FORM_VIEWFORM_URL_HERE",
+  COMMENT_FORM_URL: "https://docs.google.com/forms/d/e/1FAIpQLScH6C3Qt7MiJIyrjPBV7LawcdoMIc2-pqGVwrBPmm3I8Fx2GA/viewform?usp=header",
 
   // OPTIONAL: Comment form entry IDs (from your pre-filled link)
   COMMENT_FORM: {
