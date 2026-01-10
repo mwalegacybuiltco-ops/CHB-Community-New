@@ -43,9 +43,9 @@ window.CHB_COMMUNITY = {
     name: "Display name",
     channel: "Channel",
     post: "Post",
-    photo: "pup pics",
-    status: "status",
-    pinned: "pinned"
+    photo: "Pup Pics",
+    status: "Status",
+    pinned: "Pinned"
   },
 
   // Comment sheet headers (must match your comment form response sheet)
