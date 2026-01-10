@@ -3,7 +3,7 @@
 
 window.CHB_COMMUNITY = {
   // REQUIRED: Posts CSV feed (Google Sheet -> File -> Share -> Publish to web -> CSV)
-  FEED_CSV_URL: "https://docs.google.com/spreadsheets/d/e/2PACX-1vSYGu4rcdcKRjLsx0jNAcQuPswjveFrnDJ5hbh7I-o84DJvA1XyR9z2H2ma4t5o2BNaOVINGuIcYcTM/pub?gid=54399313&single=true&output=csv",
+  FEED_CSV_URL: "https://docs.google.com/spreadsheets/d/e/2PACX-1vTj-xUDGMddo_Zapki7VPxab5lEyDcT4M1fBUpV0_VhXEP7ns4QbXjqt5tomnqFCnh5PaYggDZuilaR/pub?gid=571596116&single=true&output=csv",
 
   // OPTIONAL: Comments CSV feed (separate Google Sheet for comment form responses)
   COMMENTS_CSV_URL: "https://docs.google.com/spreadsheets/d/e/2PACX-1vTj-xUDGMddo_Zapki7VPxab5lEyDcT4M1fBUpV0_VhXEP7ns4QbXjqt5tomnqFCnh5PaYggDZuilaR/pub?gid=571596116&single=true&output=csv",
