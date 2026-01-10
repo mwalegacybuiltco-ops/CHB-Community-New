@@ -1,0 +1,66 @@
+// Canine Haven Boutique Community (Affiliate-only)
+// Paste your links below (Google Sheets must be published as CSV)
+
+window.CHB_COMMUNITY = {
+  // REQUIRED: Posts CSV feed (Google Sheet -> File -> Share -> Publish to web -> CSV)
+  FEED_CSV_URL: "PASTE_POSTS_CSV_PUB_LINK_HERE",
+
+  // OPTIONAL: Comments CSV feed (separate Google Sheet for comment form responses)
+  COMMENTS_CSV_URL: "PASTE_COMMENTS_CSV_PUB_LINK_HERE",
+
+  // REQUIRED: Google Form link for creating a post (the post form)
+  POST_FORM_URL: "PASTE_POST_FORM_URL_HERE",
+
+  // OPTIONAL: Google Form base link for commenting (do NOT use /prefill)
+  COMMENT_FORM_URL: "PASTE_COMMENT_FORM_VIEWFORM_URL_HERE",
+
+  // OPTIONAL: Comment form entry IDs (from your pre-filled link)
+  COMMENT_FORM: {
+    postIdEntry: "entry.1652175336",
+    nameEntry: "entry.14847401",
+    rulesEntry: "entry.1849769871",
+    rulesValue: "Option 1"
+  },
+
+  // OPTIONAL LINKS (tabs)
+  SHOP_URL: "PASTE_YOUR_SHOP_URL_HERE",
+  EVENTS_URL: "PASTE_YOUR_EVENTS_URL_HERE",
+  FILES_URL: "PASTE_YOUR_FILES_URL_HERE",
+
+  // Affiliate Menu links (1–5)
+  MENU_URLS: {
+    start: "PASTE_START_HERE_URL_HERE",
+    training: "PASTE_TRAINING_URL_HERE",
+    vault: "PASTE_CONTENT_VAULT_URL_HERE",
+    mediaAssets: "PASTE_MEDIA_ASSETS_URL_HERE",
+    links: "PASTE_IMPORTANT_LINKS_URL_HERE"
+  },
+
+  // Column names (must match the CSV headers EXACTLY)
+  // Common Google Forms headers: Timestamp, Display name, Channel, Post, pup pics, status, pinned
+  FIELDS: {
+    timestamp: "Timestamp",
+    name: "Display name",
+    channel: "Channel",
+    post: "Post",
+    photo: "pup pics",
+    status: "status",
+    pinned: "pinned"
+  },
+
+  // Comment sheet headers (must match your comment form response sheet)
+  COMMENT_FIELDS: {
+    timestamp: "Timestamp",
+    postId: "Post ID",
+    name: "Display Name",
+    comment: "Comment"
+  },
+
+  CHANNELS: [
+    "Announcements",
+    "New Drops",
+    "Pup Pics",
+    "Questions",
+    "Reviews / Wins"
+  ]
+};
