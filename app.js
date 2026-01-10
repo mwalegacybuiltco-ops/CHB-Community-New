@@ -111,9 +111,23 @@ function normalizeStatus(v){
   return s || "APPROVED";
 }
 function getField(obj, key){
-  const col = (CFG.FIELDS || {})[key];
-  return (col && obj[col] !== undefined) ? obj[col] : "";
+  const wanted = (CFG.FIELDS && CFG.FIELDS[key]) ? String(CFG.FIELDS[key]).trim() : "";
+  if(!wanted) return "";
+
+  // exact match first
+  if(Object.prototype.hasOwnProperty.call(obj, wanted)) return obj[wanted] ?? "";
+
+  // case-insensitive fallback (handles Display Name vs Display name, etc.)
+  const lw = wanted.toLowerCase();
+  for(const k in obj){
+    if(String(k).trim().toLowerCase() === lw){
+      return obj[k] ?? "";
+    }
+  }
+
+  return "";
 }
+
 function getCommentField(obj, key){
   const col = (CFG.COMMENT_FIELDS || {})[key];
   return (col && obj[col] !== undefined) ? obj[col] : "";
