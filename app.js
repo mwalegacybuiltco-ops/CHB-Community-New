@@ -133,15 +133,23 @@ function getCommentField(obj, key){
   return (col && obj[col] !== undefined) ? obj[col] : "";
 }
 
-function driveToDirect(url){
-  if(!url) return "";
-  const u = url.trim();
-  const m1 = u.match(/drive\.google\.com\/file\/d\/([^/]+)\//);
-  const m2 = u.match(/[?&]id=([^&]+)/);
-  const id = (m1 && m1[1]) || (m2 && m2[1]);
-  if(id) return `https://drive.google.com/uc?export=view&id=${id}`;
-  return u;
+function driveToDirect(raw){
+  if(!raw) return "";
+
+  // Google Forms sometimes adds extra text or formatting
+  const text = String(raw);
+
+  // Extract Google Drive file ID
+  const idMatch =
+    text.match(/\/file\/d\/([^/]+)/) ||
+    text.match(/[?&]id=([a-zA-Z0-9_-]+)/);
+
+  if(!idMatch) return "";
+
+  const fileId = idMatch[1];
+  return `https://drive.google.com/uc?export=view&id=${fileId}`;
 }
+
 
 function copyText(text){
   if(!text) return;
