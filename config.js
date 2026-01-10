@@ -15,12 +15,14 @@ window.CHB_COMMUNITY = {
   COMMENT_FORM_URL: "https://docs.google.com/forms/d/e/1FAIpQLScH6C3Qt7MiJIyrjPBV7LawcdoMIc2-pqGVwrBPmm3I8Fx2GA/viewform?usp=header",
 
   // OPTIONAL: Comment form entry IDs (from your pre-filled link)
-  COMMENT_FORM: {
-    postIdEntry: "entry.1652175336",
-    nameEntry: "entry.14847401",
-    rulesEntry: "entry.1849769871",
-    rulesValue: "Option 1"
-  },
+ COMMENT_FORM: {
+  postIdEntry: "entry.1652175336",
+  nameEntry: "entry.14847401",
+  commentEntry: "entry.259428025",
+  rulesEntry: "entry.1849769871",
+  rulesValue: "Option 1"
+},
+
 
   // OPTIONAL LINKS (tabs)
   SHOP_URL: "PASTE_YOUR_SHOP_URL_HERE",
