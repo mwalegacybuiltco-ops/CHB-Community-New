@@ -1,3 +1,4 @@
+console.log("CONFIG LOADED", window.location.href);
 // Canine Haven Boutique Community (Affiliate-only)
 // Paste your links below (Google Sheets must be published as CSV)
 
