@@ -56,7 +56,7 @@ window.CHB_COMMUNITY = {
     comment: "Comment"
   }, // ✅ THIS COMMA WAS MISSING
 
-  CHANNELS: [
+    CHANNELS: [
     "Announcements",
     "New Drops",
     "Pup Pics",
@@ -64,3 +64,4 @@ window.CHB_COMMUNITY = {
     "Reviews / Wins"
   ]
 };
+
