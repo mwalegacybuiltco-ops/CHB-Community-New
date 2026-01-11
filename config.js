@@ -3,10 +3,10 @@
 
 window.CHB_COMMUNITY = {
   // POSTS (must be your Canine haven community Responses sheet)
-FEED_CSV_URL: "https://docs.google.com/spreadsheets/d/e/2PACX-1vTj-xUDGMddo_Zapki7VPxab5lEyDcT4M1fBUpV0_VhXEP7ns4QbXjqt5tomnqFCnh5PaYggDZuilaR/pub?gid=571596116&single=true&output=csv",
+  FEED_CSV_URL: "https://docs.google.com/spreadsheets/d/e/2PACX-1vTj-xUDGMddo_Zapki7VPxab5lEyDcT4M1fBUpV0_VhXEP7ns4QbXjqt5tomnqFCnh5PaYggDZuilaR/pub?gid=571596116&single=true&output=csv",
 
-// COMMENTS (must be your Canine Haven Boutique Comment Responses sheet)
-COMMENTS_CSV_URL: "https://docs.google.com/spreadsheets/d/e/2PACX-1vSYGu4rcdcKRjLsx0jNAcQuPswjveFrnDJ5hbh7I-o84DJvA1XyR9z2H2ma4t5o2BNaOVINGuIcYcTM/pub?gid=54399313&single=true&output=csv",
+  // COMMENTS (must be your Canine Haven Boutique Comment Responses sheet)
+  COMMENTS_CSV_URL: "https://docs.google.com/spreadsheets/d/e/2PACX-1vSYGu4rcdcKRjLsx0jNAcQuPswjveFrnDJ5hbh7I-o84DJvA1XyR9z2H2ma4t5o2BNaOVINGuIcYcTM/pub?gid=54399313&single=true&output=csv",
 
   // REQUIRED: Google Form link for creating a post (the post form)
   POST_FORM_URL: "https://docs.google.com/forms/d/e/1FAIpQLScGhWFqYLmFh06snGMdVGbftUCLfZPANt-RbI6phUbHMmEAdw/viewform?usp=header",
@@ -15,14 +15,13 @@ COMMENTS_CSV_URL: "https://docs.google.com/spreadsheets/d/e/2PACX-1vSYGu4rcdcKRj
   COMMENT_FORM_URL: "https://docs.google.com/forms/d/e/1FAIpQLScH6C3Qt7MiJIyrjPBV7LawcdoMIc2-pqGVwrBPmm3I8Fx2GA/viewform?usp=header",
 
   // OPTIONAL: Comment form entry IDs (from your pre-filled link)
- COMMENT_FORM: {
-  postIdEntry: "entry.1652175336",
-  nameEntry: "entry.14847401",
-  commentEntry: "entry.259428025",
-  rulesEntry: "entry.1849769871",
-  rulesValue: "Option 1"
-},
-
+  COMMENT_FORM: {
+    postIdEntry: "entry.1652175336",
+    nameEntry: "entry.14847401",
+    commentEntry: "entry.259428025",
+    rulesEntry: "entry.1849769871",
+    rulesValue: "Option 1"
+  },
 
   // OPTIONAL LINKS (tabs)
   SHOP_URL: "PASTE_YOUR_SHOP_URL_HERE",
@@ -39,7 +38,6 @@ COMMENTS_CSV_URL: "https://docs.google.com/spreadsheets/d/e/2PACX-1vSYGu4rcdcKRj
   },
 
   // Column names (must match the CSV headers EXACTLY)
-  // Common Google Forms headers: Timestamp, Display name, Channel, Post, pup pics, status, pinned
   FIELDS: {
     timestamp: "Timestamp",
     name: "Display name",
@@ -52,12 +50,11 @@ COMMENTS_CSV_URL: "https://docs.google.com/spreadsheets/d/e/2PACX-1vSYGu4rcdcKRj
 
   // Comment sheet headers (must match your comment form response sheet)
   COMMENT_FIELDS: {
-  timestamp: "Timestamp",
-  postId: "Do not edit (auto fill)",
-  name: "Display Name",
-  comment: "Comment"
-}
-
+    timestamp: "Timestamp",
+    postId: "Do not edit (auto fill)",
+    name: "Display Name",
+    comment: "Comment"
+  }, // ✅ THIS COMMA WAS MISSING
 
   CHANNELS: [
     "Announcements",
