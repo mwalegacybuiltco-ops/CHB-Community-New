@@ -467,9 +467,10 @@ function openCommentForm(postId){
     showModal(`<div>Add your comment form link in <b>config.js</b> → <b>COMMENT_FORM_URL</b>.</div>`);
     return;
   }
+
   const f = CFG.COMMENT_FORM || {};
-  if(!f.postIdEntry || !f.nameEntry){
-    showModal(`<div>Add your comment form entry IDs in <b>config.js</b> → <b>COMMENT_FORM</b>.</div>`);
+  if(!f.postIdEntry || !f.nameEntry || !f.commentEntry){
+    showModal(`<div>Missing comment form entry IDs. Check <b>config.js</b> → <b>COMMENT_FORM</b>.</div>`);
     return;
   }
 
@@ -478,10 +479,12 @@ function openCommentForm(postId){
     ? `&${f.rulesEntry}=${encodeURIComponent(f.rulesValue)}`
     : "";
 
+  // commentEntry included as blank so the form opens ready to type
   const url =
     `${CFG.COMMENT_FORM_URL}?usp=pp_url` +
     `&${f.postIdEntry}=${encodeURIComponent(postId)}` +
     `&${f.nameEntry}=${encodeURIComponent(displayName)}` +
+    `&${f.commentEntry}=` +
     rulesPart;
 
   window.open(url, "_blank", "noopener,noreferrer");
