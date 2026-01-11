@@ -52,11 +52,12 @@ COMMENTS_CSV_URL: "https://docs.google.com/spreadsheets/d/e/2PACX-1vSYGu4rcdcKRj
 
   // Comment sheet headers (must match your comment form response sheet)
   COMMENT_FIELDS: {
-    timestamp: "Timestamp",
-    postId: "Post ID",
-    name: "Display Name",
-    comment: "Comment"
-  },
+  timestamp: "Timestamp",
+  postId: "Do not edit (auto fill)",
+  name: "Display Name",
+  comment: "Comment"
+}
+
 
   CHANNELS: [
     "Announcements",
