@@ -17,12 +17,10 @@ window.CHB_COMMUNITY = {
 
   // OPTIONAL: Comment form entry IDs (from your pre-filled link)
   COMMENT_FORM: {
-    postIdEntry: "entry.1652175336",
-    nameEntry: "entry.14847401",
-    commentEntry: "entry.259428025",
-    rulesEntry: "entry.1849769871",
-    rulesValue: "Option 1"
-  },
+   COMMENT_FORM: {
+  postIdEntry: "entry.1652175336",
+  nameEntry: "entry.14847401",
+  commentEntry: "entry.259428025"
 
   // OPTIONAL LINKS (tabs)
   SHOP_URL: "PASTE_YOUR_SHOP_URL_HERE",
