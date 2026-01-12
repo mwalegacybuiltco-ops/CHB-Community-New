@@ -344,6 +344,7 @@ function renderFeed(targetEl, posts, opts = {}){
 
     // Post ID defaults to Timestamp (works well with Google Forms)
     const postId = getField(p,"timestamp") || "";
+
     const postIdSafe = escapeHtml(postId);
 
     const commentsHtml = (CFG.COMMENTS_CSV_URL && !String(CFG.COMMENTS_CSV_URL).includes("PASTE_"))
