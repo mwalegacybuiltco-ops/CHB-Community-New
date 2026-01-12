@@ -39,14 +39,15 @@ window.CHB_COMMUNITY = {
 
   // Posts CSV headers
   FIELDS: {
-    timestamp: "Timestamp",
-    name: "Display name",
-    channel: "Channel",
-    post: "Post",
-    photo: "Pup Pics",
-    status: "Status",
-    pinned: "Pinned"
-  },
+  timestamp: "Timestamp",
+  name: "Display Name",
+  channel: "Channel",
+  post: "Post",
+  photo: "Pup Pics",
+  status: "Status",
+  pinned: "Pinned"
+},
+
 
   // Comments CSV headers (MUST match your comment sheet headers EXACTLY)
   COMMENT_FIELDS: {
