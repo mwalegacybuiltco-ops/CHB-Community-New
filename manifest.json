@@ -1,0 +1,9 @@
+{
+  "name": "CHB Affiliate Community",
+  "short_name": "CHB Community",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#07070a",
+  "theme_color": "#6b3fb4",
+  "icons": []
+}

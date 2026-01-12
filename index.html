@@ -1,171 +1,59 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
-  <title>Canine Haven Boutique Community</title>
-  <link rel="stylesheet" href="styles.css" />
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
+  <title>CHB Affiliate Community</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="styles.css"/>
 </head>
 <body>
+  <header class="topbar">
+    <div class="brand" id="homeBtn" role="button" tabindex="0">
+      <div class="logo">🐾</div>
+      <div>
+        <div class="title">Canine Haven Boutique</div>
+        <div class="subtitle">Affiliate Community</div>
+      </div>
+    </div>
+    <button id="logoutBtn" class="ghost hidden">Logout</button>
+  </header>
 
-  <!-- SIGN IN -->
-  <section id="signinScreen" class="centerScreen">
-    <div class="signinCard">
-      <div class="badge">🐾 Canine Haven Boutique</div>
-      <h1 class="signinTitle">Affiliate Community</h1>
-      <p class="signinSub">
-        Official Canine Haven Boutique space for approved affiliates only.
-        Sign in to access training, content vault, and community updates.
-      </p>
+  <section id="screenAuth" class="screen">
+    <div class="card authCard">
+      <h1>Sign in</h1>
+      <p class="muted">Private affiliate-only community.</p>
 
-      <label class="label" for="nameInput">Display Name</label>
-      <input id="nameInput" class="input full" placeholder="Your name (shown on posts + comments)" autocomplete="name" />
+      <label class="field">
+        <span>Email</span>
+        <input id="emailInput" type="email" placeholder="you@email.com" autocomplete="email">
+      </label>
 
-      <label class="label" for="codeInput">Access Code (optional)</label>
-      <input id="codeInput" class="input full" placeholder="If you were given a code" autocomplete="one-time-code" />
+      <label class="field">
+        <span>PIN</span>
+        <input id="pinInput" type="password" inputmode="numeric" placeholder="4–6 digits" autocomplete="one-time-code">
+      </label>
 
-      <button id="signinBtn" class="btn primary full" type="button">Sign In</button>
+      <button id="loginBtn" class="btn primary">Enter</button>
+      <div id="authMsg" class="msg"></div>
 
-      <div class="affiliateOnly">Affiliate portal • brand rules apply</div>
-
-      <div class="note small">
-        No passwords in this version. Your display name is saved on this device.
+      <div class="small" style="margin-top:10px">
+        This build works even when opened as a file. Demo Mode allows any email + PIN unless you connect Sheets.
       </div>
     </div>
   </section>
 
-  <!-- APP -->
-  <div id="appScreen" class="hidden">
-    <aside class="sideMenu" aria-label="Affiliate Menu">
-      <div class="menuBrand">
-        <img src="images/canine-haven.jpg" alt="Canine Haven Boutique" />
-        <div class="menuBrandText">
-          <div class="menuBrandTitle">Canine Haven Boutique</div>
-          <div class="menuBrandSub">Affiliate Hub</div>
-        </div>
-      </div>
+  <section id="screenApp" class="screen hidden">
+    <main id="view" class="view"></main>
 
-      <nav class="menuList" aria-label="Menu Links">
-        <button class="menuItem" data-menu="start" type="button">1. Start Here</button>
-        <button class="menuItem" data-menu="training" type="button">2. Training</button>
-        <button class="menuItem" data-menu="vault" type="button">3. Content Vault</button>
-        <button class="menuItem" data-menu="mediaAssets" type="button">4. Media Assets</button>
-        <button class="menuItem" data-menu="links" type="button">5. Important Links</button>
-      </nav>
-
-      <div class="menuFooter">
-        <div class="tinyNote">Powered by <b>LegacyBuilt Tech</b> · All rights reserved</div>
-      </div>
-    </aside>
-
-    <header class="topbar">
-      <div class="brand">
-        <div class="badge">🐾 Canine Haven Boutique</div>
-        <div class="title">Community</div>
-      </div>
-      <div class="topActions">
-        <button id="menuToggle" class="btn" type="button">☰ Menu</button>
-        <button id="refreshBtn" class="btn" type="button">Refresh</button>
-        <button id="postBtn" class="btn primary" type="button">Post (Paragraph)</button>
-        <button id="signoutBtn" class="btn" type="button">Sign Out</button>
-      </div>
-    </header>
-
-    <!-- FB-style tabs (no Guides) -->
-    <nav class="tabs" aria-label="Community Tabs">
-      <button class="tab active" data-tab="discussion" type="button">Discussion</button>
-      <button class="tab" data-tab="featured" type="button">Featured</button>
-      <button class="tab" data-tab="events" type="button">Events</button>
-      <button class="tab" data-tab="media" type="button">Media</button>
-      <button class="tab" data-tab="files" type="button">Files</button>
-      <button class="tab" data-tab="people" type="button">People</button>
+    <nav class="bottomNav" aria-label="Primary">
+      <button class="tabBtn" data-tab="feed">Feed</button>
+      <button class="tabBtn" data-tab="featured">Featured</button>
+      <button class="tabBtn" data-tab="hub">Hub</button>
+      <button class="tabBtn" data-tab="profile">Profile</button>
     </nav>
+  </section>
 
-    <main class="wrap">
-      <!-- Filter / Search row (used mainly in Discussion) -->
-      <section id="filtersPanel" class="panel">
-        <div class="row">
-          <select id="channelFilter" class="select" aria-label="Channel Filter">
-            <option value="ALL">All Channels</option>
-          </select>
-          <input id="searchInput" class="input" placeholder="Search posts..." />
-        </div>
-        <div class="row row2">
-          <button id="copyNameBtn" class="btn" type="button">Copy My Name</button>
-          <a id="shopBtn" class="btn" href="#" target="_blank" rel="noopener">Shop</a>
-        </div>
-        <div class="note" id="welcomeNote"></div>
-      </section>
-
-      <!-- Discussion -->
-      <section id="view_discussion" class="view">
-        <section id="feed" class="feed"></section>
-      </section>
-
-      <!-- Featured -->
-      <section id="view_featured" class="view hidden">
-        <div class="panel">
-          <div class="note">
-            Featured shows pinned posts (📌). Pin/unpin from your Google Sheet using pinned = TRUE/FALSE.
-          </div>
-        </div>
-        <section id="featuredFeed" class="feed"></section>
-      </section>
-
-      <!-- Events -->
-      <section id="view_events" class="view hidden">
-        <div class="panel">
-          <div class="note">Add your event link in <b>config.js</b> (EVENTS_URL) to show it here.</div>
-          <button id="openEventsBtn" class="btn primary" type="button">Open Events</button>
-        </div>
-      </section>
-
-      <!-- Media -->
-      <section id="view_media" class="view hidden">
-        <div class="panel">
-          <div class="note">Media shows posts that include a Photo Link.</div>
-        </div>
-        <section id="mediaFeed" class="feed"></section>
-      </section>
-
-      <!-- Files -->
-      <section id="view_files" class="view hidden">
-        <div class="panel">
-          <div class="note">
-            Add your Files/Resources link in <b>config.js</b> (FILES_URL).
-            You can use a Google Drive folder, Dropbox, or a web page.
-          </div>
-          <button id="openFilesBtn" class="btn primary" type="button">Open Files</button>
-        </div>
-      </section>
-
-      <!-- People -->
-      <section id="view_people" class="view hidden">
-        <div class="panel">
-          <div class="note">
-            People is a simple member list pulled from names in posts. (No accounts or DMs in this version.)
-          </div>
-        </div>
-        <div id="peopleList" class="peopleList"></div>
-      </section>
-    </main>
-
-    <div id="modal" class="modal hidden" role="dialog" aria-modal="true" aria-label="Modal">
-      <div class="modalCard">
-        <div class="modalTitle">Canine Haven Boutique Community</div>
-        <div id="modalBody" class="modalBody"></div>
-        <button id="closeModal" class="btn" type="button">Close</button>
-      </div>
-    </div>
-
-    <footer class="footer">
-      Powered by <strong>LegacyBuilt Tech</strong> · All rights reserved
-    </footer>
-  </div>
-
- <script src="config.js?v=12"></script>
-<script src="app.js?v=12"></script>
-
-
+  <script src="app-bundle.js"></script>
 </body>
 </html>
