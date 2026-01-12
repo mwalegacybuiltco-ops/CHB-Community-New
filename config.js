@@ -1,33 +1,34 @@
-console.log("CONFIG LOADED", window.location.href);
 // Canine Haven Boutique Community (Affiliate-only)
 // Paste your links below (Google Sheets must be published as CSV)
 
 window.CHB_COMMUNITY = {
-  // POSTS (must be your Canine haven community Responses sheet)
-  FEED_CSV_URL: "https://docs.google.com/spreadsheets/d/e/2PACX-1vTj-xUDGMddo_Zapki7VPxab5lEyDcT4M1fBUpV0_VhXEP7ns4QbXjqt5tomnqFCnh5PaYggDZuilaR/pub?gid=571596116&single=true&output=csv",
+  // POSTS (Community Posts responses sheet CSV)
+  FEED_CSV_URL: "https://docs.google.com/spreadsheets/d/e/2PACX-1vSYGu4rcdcKRjLsx0jNAcQuPswjveFrnDJ5hbh7I-o84DJvA1XyR9z2H2ma4t5o2BNaOVINGuIcYcTM/pub?gid=54399313&single=true&output=csv",
 
-  // COMMENTS (must be your Canine Haven Boutique Comment Responses sheet)
-  COMMENTS_CSV_URL: "https://docs.google.com/spreadsheets/d/e/2PACX-1vSYGu4rcdcKRjLsx0jNAcQuPswjveFrnDJ5hbh7I-o84DJvA1XyR9z2H2ma4t5o2BNaOVINGuIcYcTM/pub?gid=54399313&single=true&output=csv",
+  // COMMENTS (Comment responses sheet CSV)
+  COMMENTS_CSV_URL: "https://docs.google.com/spreadsheets/d/e/2PACX-1vTj-xUDGMddo_Zapki7VPxab5lEyDcT4M1fBUpV0_VhXEP7ns4QbXjqt5tomnqFCnh5PaYggDZuilaR/pub?gid=571596116&single=true&output=csv",
 
-  // REQUIRED: Google Form link for creating a post (the post form)
+  // Post form
   POST_FORM_URL: "https://docs.google.com/forms/d/e/1FAIpQLScGhWFqYLmFh06snGMdVGbftUCLfZPANt-RbI6phUbHMmEAdw/viewform?usp=header",
 
-  // OPTIONAL: Google Form base link for commenting (do NOT use /prefill)
+  // Comment form (base link, NO /prefill)
   COMMENT_FORM_URL: "https://docs.google.com/forms/d/e/1FAIpQLScH6C3Qt7MiJIyrjPBV7LawcdoMIc2-pqGVwrBPmm3I8Fx2GA/viewform?usp=header",
 
-  // OPTIONAL: Comment form entry IDs (from your pre-filled link)
+  // Comment form entry IDs (from prefilled link)
   COMMENT_FORM: {
-   COMMENT_FORM: {
-  postIdEntry: "entry.1652175336",
-  nameEntry: "entry.14847401",
-  commentEntry: "entry.259428025"
+    postIdEntry: "entry.1652175336",
+    nameEntry: "entry.14847401",
+    commentEntry: "entry.259428025",
+    rulesEntry: "entry.1849769871",
+    rulesValue: "Option 1"
+  },
 
   // OPTIONAL LINKS (tabs)
   SHOP_URL: "PASTE_YOUR_SHOP_URL_HERE",
   EVENTS_URL: "PASTE_YOUR_EVENTS_URL_HERE",
   FILES_URL: "PASTE_YOUR_FILES_URL_HERE",
 
-  // Affiliate Menu links (1–5)
+  // Affiliate Menu links
   MENU_URLS: {
     start: "PASTE_START_HERE_URL_HERE",
     training: "PASTE_TRAINING_URL_HERE",
@@ -36,7 +37,7 @@ window.CHB_COMMUNITY = {
     links: "PASTE_IMPORTANT_LINKS_URL_HERE"
   },
 
-  // Column names (must match the CSV headers EXACTLY)
+  // Posts CSV headers
   FIELDS: {
     timestamp: "Timestamp",
     name: "Display name",
@@ -47,15 +48,15 @@ window.CHB_COMMUNITY = {
     pinned: "Pinned"
   },
 
-  // Comment sheet headers (must match your comment form response sheet)
+  // Comments CSV headers (MUST match your comment sheet headers EXACTLY)
   COMMENT_FIELDS: {
     timestamp: "Timestamp",
-    postId: "Do not edit (auto fill)",
+    postId: "Do not edit (auto filled)",
     name: "Display Name",
     comment: "Comment"
-  }, // ✅ THIS COMMA WAS MISSING
+  },
 
-    CHANNELS: [
+  CHANNELS: [
     "Announcements",
     "New Drops",
     "Pup Pics",
@@ -63,4 +64,3 @@ window.CHB_COMMUNITY = {
     "Reviews / Wins"
   ]
 };
-
