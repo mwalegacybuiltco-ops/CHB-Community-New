@@ -51,17 +51,17 @@ window.CHB_COMMUNITY = {
 
   // Comments CSV headers (MUST match your comment sheet headers EXACTLY)
   COMMENT_FIELDS: {
-    timestamp: "Timestamp",
-    postId: "Do not edit (auto filled)",
-    name: "Display Name",
-    comment: "Comment"
-  },
+  timestamp: "Timestamp",
+  postId: "Do not edit (auto fill)",
+  name: "Display Name",
+  comment: "Comment"
+},
 
-  CHANNELS: [
-    "Announcements",
-    "New Drops",
-    "Pup Pics",
-    "Questions",
-    "Reviews / Wins"
-  ]
-};
+CHANNELS: [
+  "Announcements",
+  "New Drops",
+  "Pup Pics",
+  "Questions",
+  "Reviews / Wins"
+]
+
