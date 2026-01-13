@@ -29,10 +29,9 @@
         <input id="emailInput" type="email" placeholder="you@email.com" autocomplete="email">
       </label>
 
-      <label class="field">
-        <span>PIN</span>
-        <input id="pinInput" type="password" inputmode="numeric" placeholder="4–6 digits" autocomplete="one-time-code">
-      </label>
+      <!-- PIN hidden – master pin embedded in JS -->
+<input id="pinInput" type="hidden" value="12345">
+
 
       <button id="loginBtn" class="btn primary">Enter</button>
       <div id="authMsg" class="msg"></div>
