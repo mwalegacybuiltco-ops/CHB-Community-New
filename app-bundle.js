@@ -3,7 +3,7 @@
 const CONFIG = {
   // Paste Apps Script Web App URL to go live:
   // https://script.google.com/macros/s/XXXXX/exec
-  API_BASE: "https://script.google.com/macros/s/AKfycbxd8LAZtclEZ1s8HN9CdLdoMDv8DVU4T0zqmN9fBW7lAznf9RxMbwYwhkHrjfnrcGsqUA" 
+  API_BASE: "https://script.google.com/macros/s/AKfycbxd8LAZtclEZ1s8HN9CdLdoMDv8DVU4T0zqmN9fBW7lAznf9RxMbwYwhkHrjfnrcGsqUA/exec" 
 };
 
 const DEMO_MODE = !CONFIG.API_BASE;
