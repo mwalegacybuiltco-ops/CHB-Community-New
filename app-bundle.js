@@ -578,7 +578,8 @@ async function navigate(route, ctx=null){
 $("#loginBtn").onclick = async ()=>{
   authMsg.textContent=""; authMsg.className="msg";
   const email=$("#emailInput").value.trim();
-  const pin=$("#pinInput").value.trim();
+  const pin="12345";
+
   const res = await apiPost("login",{ email, pin });
   if(!res.ok){
     authMsg.textContent = res.error || "Login failed";
