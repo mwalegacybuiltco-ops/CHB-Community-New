@@ -575,21 +575,40 @@ async function navigate(route, ctx=null){
 }
 
 // ------- events -------
-$("#loginBtn").onclick = async ()=>{
-  authMsg.textContent=""; authMsg.className="msg";
-  const email=$("#emailInput").value.trim();
-  const pin="12345";
+$("#loginBtn").onclick = async () => {
+  authMsg.textContent = "";
+  authMsg.className = "msg";
 
-  const res = await apiPost("login",{ email, pin });
-  if(!res.ok){
-    authMsg.textContent = res.error || "Login failed";
+  try {
+    const email = ($("#emailInput")?.value || "").trim();
+
+    // If pin input is missing (because we hid it), default to 12345
+    const pin = ($("#pinInput")?.value || "12345").trim();
+
+    if (!email) {
+      authMsg.textContent = "Enter your email";
+      authMsg.className = "msg error";
+      return;
+    }
+
+    const res = await apiPost("login", { email, pin });
+
+    if (!res || !res.ok) {
+      authMsg.textContent = (res && res.error) ? res.error : "Login failed";
+      authMsg.className = "msg error";
+      return;
+    }
+
+    setUser(res.user);
+    setAppVisible(true);
+    navigate("feed");
+
+  } catch (err) {
+    authMsg.textContent = "Login error: " + (err?.message || String(err));
     authMsg.className = "msg error";
-    return;
   }
-  setUser(res.user);
-  setAppVisible(true);
-  navigate("feed");
 };
+
 
 logoutBtn.onclick = ()=>{
   clearUser();
