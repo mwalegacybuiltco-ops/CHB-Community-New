@@ -236,6 +236,12 @@ async function renderFeed(){
   $("#refreshBtn").onclick = ()=> loadFeed();
   $("#postBtn").onclick = ()=> submitPost();
   await loadFeed();
+  const pending = sessionStorage.getItem("chb_pending_img");
+if(pending){
+  $("#postImageUrl").value = pending;
+  sessionStorage.removeItem("chb_pending_img");
+}
+
 }
 $("#uploadBtn").onclick = ()=> openUploader();
 
@@ -636,6 +642,26 @@ $$(".tabBtn").forEach(b=>{
 });
 
 $("#homeBtn").onclick = ()=>{ if(getUser()) navigate("feed"); };
+function handleImgReturn(){
+  const h = location.hash || "";
+  const m = h.match(/img=([^&]+)/);
+  if(!m) return;
+
+  const imgUrl = decodeURIComponent(m[1]);
+
+  // If we're on the feed screen and the input exists, fill it
+  const input = document.getElementById("postImageUrl");
+  if(input){
+    input.value = imgUrl;
+    toast("Screenshot added");
+  } else {
+    // If not on feed yet, store temporarily
+    sessionStorage.setItem("chb_pending_img", imgUrl);
+  }
+
+  // clean the hash so it doesn't keep re-triggering
+  history.replaceState(null, "", location.href.split("#")[0]);
+}
 
 // deep link
 function handleHash(){
@@ -645,7 +671,11 @@ function handleHash(){
     navigate("post",{ post_id: decodeURIComponent(m[1]) });
   }
 }
-window.addEventListener("hashchange", handleHash);
+window.addEventListener("hashchange", ()=>{
+  handleHash();handleImgReturn();
+
+  handleImgReturn();
+});
 
 // init
 const u=getUser();
