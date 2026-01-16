@@ -209,7 +209,11 @@ async function renderFeed(){
       <div class="h1">Community Feed</div>
       <textarea id="postText" placeholder="Share wins, questions, product pics..."></textarea>
       <div class="small" style="margin-top:10px">Optional photo (paste a shareable Google Drive image link)</div>
-      <input id="postImageUrl" type="url" placeholder="https://drive.google.com/uc?id=..." />
+      <div class="row" style="display:flex; gap:10px; align-items:center;">
+  <input id="postImageUrl" type="url" placeholder="https://drive.google.com/uc?id=..." style="flex:1;" />
+  <button id="uploadBtn" class="btn" type="button">Upload Screenshot</button>
+</div>
+
       <div class="actions">
         <button id="refreshBtn" class="btn">Refresh</button>
         <button id="postBtn" class="btn primary">Post</button>
