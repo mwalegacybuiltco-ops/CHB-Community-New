@@ -184,6 +184,17 @@ function jsonpRequest(action, params={}){
     document.body.appendChild(script);
   });
 }
+function openUploader(){
+  // your Apps Script web app base (same as CONFIG.API_BASE)
+  const base = CONFIG.API_BASE;
+
+  // return URL should be your GitHub Pages app URL (no hash)
+  const returnUrl = location.href.split("#")[0];
+
+  // open the uploader screen in a new tab
+  const url = base + "?action=upload&return=" + encodeURIComponent(returnUrl);
+  window.open(url, "_blank", "noopener");
+}
 
 // ------- routing / views -------
 const authScreen = $("#screenAuth");
