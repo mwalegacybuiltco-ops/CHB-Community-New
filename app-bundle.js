@@ -226,6 +226,7 @@ async function renderFeed(){
   $("#postBtn").onclick = ()=> submitPost();
   await loadFeed();
 }
+$("#uploadBtn").onclick = ()=> openUploader();
 
 async function loadFeed(){
   const list = $("#feedList");
